@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB19B0A62B7520AA002487A4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19B0A52B7520AA002487A4 /* Configuration.swift */; };
+		CBCB5BF92B76425C0021357A /* Flickr in Frameworks */ = {isa = PBXBuildFile; productRef = CBCB5BF82B76425C0021357A /* Flickr */; };
 		CBEDBA882B751CA400E2220E /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBA872B751CA400E2220E /* DemoApp.swift */; };
 		CBEDBA8A2B751CA400E2220E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBA892B751CA400E2220E /* ContentView.swift */; };
 		CBEDBA8C2B751CA500E2220E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBA8B2B751CA500E2220E /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		CB19B0A32B751EE5002487A4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		CB19B0A42B75206E002487A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB19B0A52B7520AA002487A4 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		CBCB5BF62B753B370021357A /* Flickr */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Flickr; sourceTree = "<group>"; };
 		CBEDBA842B751CA400E2220E /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEDBA872B751CA400E2220E /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		CBEDBA892B751CA400E2220E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBCB5BF92B76425C0021357A /* Flickr in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,13 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CBCB5BF72B7642580021357A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CBEDBA7B2B751CA400E2220E = {
 			isa = PBXGroup;
 			children = (
+				CBCB5BF62B753B370021357A /* Flickr */,
 				CBEDBA862B751CA400E2220E /* Demo */,
 				CBEDBA982B751CA600E2220E /* DemoTests */,
 				CB19B0A22B751DC9002487A4 /* Demo.xctestplan */,
 				CBEDBA852B751CA400E2220E /* Products */,
+				CBCB5BF72B7642580021357A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +133,9 @@
 			dependencies = (
 			);
 			name = Demo;
+			packageProductDependencies = (
+				CBCB5BF82B76425C0021357A /* Flickr */,
+			);
 			productName = Demo;
 			productReference = CBEDBA842B751CA400E2220E /* Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -496,6 +511,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CBCB5BF82B76425C0021357A /* Flickr */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Flickr;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBEDBA7C2B751CA400E2220E /* Project object */;
 }
