@@ -1,7 +1,8 @@
 import Foundation
 
 public protocol Client {
-    func search(_ query: Search.Query) async throws -> [Search.Photo]
+    func search(_ query: Search.Query) async throws -> [Search.Item]
+    func info(for id: Photo.ID) async throws -> Photo
 }
 
 public enum HTTPMethod: String {
@@ -15,31 +16,43 @@ enum ClientError: Error {
     case unknown(underlying: Error)
 }
 
-public class FlickrClient: Client {
+extension FlickrClient: Client {
+    
+    public func search(_ query: Search.Query) async throws -> [Search.Item] {
+        let response: Search.Response = try await perform(request(.GET, query))
+        return response.results.items
+    }
+    
+    public func info(for id: Photo.ID) async throws -> Photo {
+        let response: Photo.Response = try await perform(request(.GET, Photo.Query(id: id)))
+        return response.photo
+    }
+}
+
+public class FlickrClient {
     
     private static let baseURL = "https://api.flickr.com/services/rest"
     
     let session: Session
     let apiKey: String
     
-    let decoder = JSONDecoder()
+    let decoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .lenient
+        return decoder
+    }()
     
     public init(session: Session, apiKey: String) {
         self.session = session
         self.apiKey = apiKey
     }
-    
-    public func search(_ query: Search.Query) async throws -> [Search.Photo] {
-        let response: Search.Response = try await perform(request(.GET, query))
-        return response.photos.photos
-    }
-    
+
     func request(_ method: HTTPMethod, _ query: QueryItemConvertible) throws -> URLRequest {
         var components = URLComponents(string: FlickrClient.baseURL)!
         components.queryItems = [
             URLQueryItem(name: "api_key", value: apiKey),
             URLQueryItem(name: "format", value: "json"),
-            URLQueryItem(name: "nojsoncallback", value: "1")
+            URLQueryItem(name: "nojsoncallback", value: "1"),
         ] + query.queryItems
         if let url = components.url {
             var request = URLRequest(url: url)
@@ -66,6 +79,8 @@ public class FlickrClient: Client {
         if httpResponse.statusCode != 200 {
             throw ClientError.unexpected(response: httpResponse)
         }
+        
+        // print(String(data: data, encoding: .utf8)!)
 
         do {
             return try decoder.decode(T.self, from: data)

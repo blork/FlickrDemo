@@ -3,27 +3,31 @@ import Foundation
 public enum Search {
     
     public struct Response: Decodable {
-        public let photos: Photos
+        public let results: Results
+        
+        enum CodingKeys: String, CodingKey {
+            case results = "photos"
+        }
     }
     
-    public struct Photos: Decodable {
+    public struct Results: Decodable {
         public let page: Int
         public let pages: Int
         public let perPage: Int
         public let total: Int
-        public let photos: [Photo]
+        public let items: [Item]
         
         enum CodingKeys: String, CodingKey {
             case page
             case pages
             case perPage = "perpage"
             case total
-            case photos = "photo"
+            case items = "photo"
         }
     }
     
-    public struct Photo: Decodable, Identifiable {
-        public let id: String
+    public struct Item: Decodable, Identifiable {
+        public let id: Photo.ID
         public let owner: String
         public let secret: String
         public let server: String
