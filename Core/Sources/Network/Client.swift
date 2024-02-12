@@ -106,3 +106,43 @@ public class FlickrClient {
         }
     }
 }
+
+public class StubClient: Client {
+    var error: Error?
+    
+    var photos: [Photo.List.Item]?
+    
+    var detail: Photo.Detail?
+    
+    public init(error: Error? = nil, photos: [Photo.List.Item]? = nil, detail: Photo.Detail? = nil) {
+        #if DEBUG
+        self.error = error
+        self.photos = photos
+        self.detail = detail
+        #else
+        fatalError("StubClient should not be used in RELEASE mode!")
+        #endif
+    }
+    
+    public func recent() async throws -> [Photo.List.Item] {
+        if let error { throw error }
+        if let photos { return photos}
+        throw StubClientError.notSetUp
+    }
+    
+    public func search(_ query: Search.Query) async throws -> [Photo.List.Item] {
+        if let error { throw error }
+        if let photos { return photos}
+        throw StubClientError.notSetUp
+    }
+    
+    public func info(for id: Photo.Detail.ID) async throws -> Photo.Detail {
+        if let error { throw error }
+        if let detail { return detail}
+        throw StubClientError.notSetUp
+    }
+    
+    public enum StubClientError: Error {
+        case notSetUp
+    }
+}

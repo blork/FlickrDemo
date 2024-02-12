@@ -1,7 +1,7 @@
-import Flickr
+import Network
 import Foundation
 
-class FakeSession: Session {
+class StubSession: Session {
     
     var response: (Data, Int)?
     var error: Error?
@@ -17,10 +17,10 @@ class FakeSession: Session {
         } else if let error {
             throw error
         }
-        throw FakeSessionError.notSetUp
+        throw StubSessionError.notSetUp
     }
     
-    enum FakeSessionError: Error {
+    enum StubSessionError: Error {
         case notSetUp
     }
 }

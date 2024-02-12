@@ -1,4 +1,4 @@
-@testable import Flickr
+@testable import Network
 import XCTest
 
 final class DateDecoderTests: XCTestCase {

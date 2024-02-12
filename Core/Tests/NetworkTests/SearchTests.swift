@@ -1,10 +1,10 @@
-@testable import Flickr
+@testable import Network
 import XCTest
 
 final class SearchTests: XCTestCase {
     
     func test_searchRequest_whenCreated_hasCorrectQueryItems() async throws {
-        let client = FlickrClient(session: FakeSession(), apiKey: "TEST_KEY")
+        let client = FlickrClient(session: StubSession(), apiKey: "TEST_KEY")
         let request = try client.request(.GET, Search.Query(text: "Hello"))
 
         let url = request.url!.absoluteString
@@ -13,7 +13,7 @@ final class SearchTests: XCTestCase {
     }
     
     func test_searchIsPerformed_successful_photosAreReturned() async throws {
-        let session = FakeSession()
+        let session = StubSession()
         
         session.response = ("""
         {
