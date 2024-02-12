@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB19B0A62B7520AA002487A4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19B0A52B7520AA002487A4 /* Configuration.swift */; };
-		CBCB5C012B7A78A80021357A /* PhotoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCB5C002B7A78A80021357A /* PhotoList.swift */; };
-		CBCB5C042B7A79BC0021357A /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = CBCB5C032B7A79BC0021357A /* Network */; };
+		CBCB5C072B7A7B400021357A /* PhotoList in Frameworks */ = {isa = PBXBuildFile; productRef = CBCB5C062B7A7B400021357A /* PhotoList */; };
 		CBEDBA882B751CA400E2220E /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBA872B751CA400E2220E /* DemoApp.swift */; };
 		CBEDBA8C2B751CA500E2220E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBA8B2B751CA500E2220E /* Assets.xcassets */; };
 		CBEDBA902B751CA500E2220E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBA8F2B751CA500E2220E /* Preview Assets.xcassets */; };
@@ -30,8 +29,9 @@
 		CB19B0A32B751EE5002487A4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		CB19B0A42B75206E002487A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB19B0A52B7520AA002487A4 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		CBCB5C002B7A78A80021357A /* PhotoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoList.swift; sourceTree = "<group>"; };
+		CBCA46E12B7A7E1300CA6793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Base; sourceTree = "<group>"; };
 		CBCB5C022B7A79B40021357A /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
+		CBCB5C052B7A7B070021357A /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 		CBEDBA842B751CA400E2220E /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEDBA872B751CA400E2220E /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		CBEDBA8B2B751CA500E2220E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBCB5C042B7A79BC0021357A /* Network in Frameworks */,
+				CBCB5C072B7A7B400021357A /* PhotoList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +69,6 @@
 		CBCB5BFD2B7A77140021357A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				CBCB5C002B7A78A80021357A /* PhotoList.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -77,7 +76,9 @@
 		CBEDBA7B2B751CA400E2220E = {
 			isa = PBXGroup;
 			children = (
+				CBCA46E12B7A7E1300CA6793 /* Base */,
 				CBCB5C022B7A79B40021357A /* Core */,
+				CBCB5C052B7A7B070021357A /* Features */,
 				CBEDBA862B751CA400E2220E /* Demo */,
 				CBEDBA982B751CA600E2220E /* DemoTests */,
 				CB19B0A22B751DC9002487A4 /* Demo.xctestplan */,
@@ -142,7 +143,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				CBCB5C032B7A79BC0021357A /* Network */,
+				CBCB5C062B7A7B400021357A /* PhotoList */,
 			);
 			productName = Demo;
 			productReference = CBEDBA842B751CA400E2220E /* Demo.app */;
@@ -230,7 +231,6 @@
 			files = (
 				CB19B0A62B7520AA002487A4 /* Configuration.swift in Sources */,
 				CBEDBA882B751CA400E2220E /* DemoApp.swift in Sources */,
-				CBCB5C012B7A78A80021357A /* PhotoList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,9 +521,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CBCB5C032B7A79BC0021357A /* Network */ = {
+		CBCB5C062B7A7B400021357A /* PhotoList */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Network;
+			productName = PhotoList;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

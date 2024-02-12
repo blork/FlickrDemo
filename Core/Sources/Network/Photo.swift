@@ -99,3 +99,13 @@ struct WrappedValue<T>: Decodable where T: Decodable {
         case value = "_content"
     }
 }
+
+public extension [Photo.List.Item] {
+    static var preview: [Photo.List.Item] {
+        [
+            .init(id: "X", owner: "John Appleseed", secret: "X", server: "X", farm: 1, title: "An Example Image"),
+            .init(id: "Y", owner: "Brenda Fuller", secret: "Y", server: "Y", farm: 1, title: "Another Example Image"),
+            .init(id: "Z", owner: "Otto Mcdaniel", secret: "Z", server: "Z", farm: 1, title: "One More Example Image")
+        ]
+    }
+}
