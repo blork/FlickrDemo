@@ -73,6 +73,12 @@ public class FlickrClient {
     func perform<T>(_ request: URLRequest) async throws -> T where T: Decodable {
         let data: Data
         let urlResponse: URLResponse
+        
+        Logger.default.debug("🔼 \(request.httpMethod!) \(request.url!.absoluteString, align: .left(columns: 1))")
+        if let body = request.httpBody, let string = String(data: body, encoding: .utf8) {
+            Logger.default.debug("\t\(string)")
+        }
+
         do {
             let response = try await session.data(for: request)
             data = response.0
@@ -82,16 +88,20 @@ public class FlickrClient {
         }
         
         let httpResponse = (urlResponse as! HTTPURLResponse)
-            
-        if httpResponse.statusCode != 200 {
-            throw ClientError.unexpected(response: httpResponse)
+        Logger.default.debug("🔽 \(httpResponse.statusCode) \(request.url!.absoluteString)")
+        if let body = String(data: data, encoding: .utf8) {
+            Logger.default.debug("\(body)")
         }
         
-        // print(String(data: data, encoding: .utf8)!)
+        if httpResponse.statusCode != 200 {
+            Logger.default.error("Unexpected status code: \(httpResponse.statusCode)")
+            throw ClientError.unexpected(response: httpResponse)
+        }
 
         do {
             return try decoder.decode(T.self, from: data)
         } catch {
+            Logger.default.error("Unexpected decoding error: \(error.localizedDescription)")
             throw ClientError.unknown(underlying: error)
         }
     }
