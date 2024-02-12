@@ -1,8 +1,10 @@
 import Foundation
+import OSLog
 
 public protocol Client {
-    func search(_ query: Search.Query) async throws -> [Search.Item]
-    func info(for id: Photo.ID) async throws -> Photo
+    func recent() async throws -> [Photo.List.Item]
+    func search(_ query: Search.Query) async throws -> [Photo.List.Item]
+    func info(for id: Photo.Detail.ID) async throws -> Photo.Detail
 }
 
 public enum HTTPMethod: String {
@@ -18,13 +20,18 @@ enum ClientError: Error {
 
 extension FlickrClient: Client {
     
-    public func search(_ query: Search.Query) async throws -> [Search.Item] {
-        let response: Search.Response = try await perform(request(.GET, query))
+    public func recent() async throws -> [Photo.List.Item] {
+        let response: Photo.List.Response = try await perform(request(.GET, Photo.recent))
         return response.results.items
     }
     
-    public func info(for id: Photo.ID) async throws -> Photo {
-        let response: Photo.Response = try await perform(request(.GET, Photo.Query(id: id)))
+    public func search(_ query: Search.Query) async throws -> [Photo.List.Item] {
+        let response: Photo.List.Response = try await perform(request(.GET, query))
+        return response.results.items
+    }
+    
+    public func info(for id: Photo.Detail.ID) async throws -> Photo.Detail {
+        let response: Photo.Response = try await perform(request(.GET, Photo.query(id: id)))
         return response.photo
     }
 }

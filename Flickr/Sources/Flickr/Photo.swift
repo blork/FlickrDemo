@@ -1,31 +1,74 @@
 import Foundation
 
-public struct Photo: Identifiable, Decodable {
-    public let id: String
-    public let secret: String
-    public let server: String
-    public let farm: Int
-    
-    @Wrapped public var title: String
-    @Wrapped public var description: String
+public enum Photo: QueryItemConvertible {
+    case query(id: Photo.Detail.ID)
+    case recent
 
-    public let dates: Dates
-
-    public struct Response: Decodable {
-        public let photo: Photo
-    }
-    
-    public struct Query: QueryItemConvertible {
-        public let id: Photo.ID
-        
-        var queryItems: [URLQueryItem] {
+    var queryItems: [URLQueryItem] {
+        switch self {
+        case let .query(id):
             [
                 URLQueryItem(name: "method", value: "flickr.photos.getInfo"),
-                URLQueryItem(name: "photo_id", value: id)
+                URLQueryItem(name: "photo_id", value: id),
+            ]
+        case .recent:
+            [
+                URLQueryItem(name: "method", value: "flickr.photos.getRecent"),
             ]
         }
     }
     
+    public enum List {
+        public struct Response: Decodable {
+            public let results: Results
+            
+            enum CodingKeys: String, CodingKey {
+                case results = "photos"
+            }
+        }
+        
+        public struct Results: Decodable {
+            public let page: Int
+            public let pages: Int
+            public let perPage: Int
+            public let total: Int
+            public let items: [Item]
+            
+            enum CodingKeys: String, CodingKey {
+                case page
+                case pages
+                case perPage = "perpage"
+                case total
+                case items = "photo"
+            }
+        }
+        
+        public struct Item: Decodable, Identifiable, PhotoRepresentable {
+            public let id: Photo.Detail.ID
+            public let owner: String
+            public let secret: String
+            public let server: String
+            public let farm: Int
+            public let title: String
+        }
+    }
+    
+    public struct Detail: Identifiable, Decodable, PhotoRepresentable {
+        public let id: String
+        public let secret: String
+        public let server: String
+        public let farm: Int
+        
+        @Wrapped public var title: String
+        @Wrapped public var description: String
+        
+        public let dates: Dates
+    }
+
+    public struct Response: Decodable {
+        public let photo: Photo.Detail
+    }
+        
     public struct Dates: Decodable {
         public let posted: Date
         public let taken: Date
@@ -48,7 +91,6 @@ public struct Wrapped<T>: Decodable where T: Decodable {
         wrappedValue = try! container.decode(WrappedValue<T>.self).value
     }
 }
-
 
 struct WrappedValue<T>: Decodable where T: Decodable {
     var value: T
