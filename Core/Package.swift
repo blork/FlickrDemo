@@ -3,18 +3,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "Flickr",
+    name: "Core",
     platforms: [.iOS(.v17), .macOS(.v14)],
     products: [
         .library(
-            name: "Flickr",
-            targets: ["Flickr"]),
+            name: "Network",
+            targets: ["Network"]
+        ),
     ],
     targets: [
         .target(
-            name: "Flickr"),
+            name: "Network"),
         .testTarget(
-            name: "FlickrTests",
-            dependencies: ["Flickr"]),
+            name: "NetworkTests",
+            dependencies: ["Network"]
+        ),
     ]
 )

@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CB19B0A62B7520AA002487A4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19B0A52B7520AA002487A4 /* Configuration.swift */; };
-		CBCB5BF92B76425C0021357A /* Flickr in Frameworks */ = {isa = PBXBuildFile; productRef = CBCB5BF82B76425C0021357A /* Flickr */; };
+		CBCB5C012B7A78A80021357A /* PhotoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCB5C002B7A78A80021357A /* PhotoList.swift */; };
+		CBCB5C042B7A79BC0021357A /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = CBCB5C032B7A79BC0021357A /* Network */; };
 		CBEDBA882B751CA400E2220E /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBA872B751CA400E2220E /* DemoApp.swift */; };
-		CBEDBA8A2B751CA400E2220E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBA892B751CA400E2220E /* ContentView.swift */; };
 		CBEDBA8C2B751CA500E2220E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBA8B2B751CA500E2220E /* Assets.xcassets */; };
 		CBEDBA902B751CA500E2220E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBA8F2B751CA500E2220E /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -30,10 +30,10 @@
 		CB19B0A32B751EE5002487A4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		CB19B0A42B75206E002487A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB19B0A52B7520AA002487A4 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		CBCB5BF62B753B370021357A /* Flickr */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Flickr; sourceTree = "<group>"; };
+		CBCB5C002B7A78A80021357A /* PhotoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoList.swift; sourceTree = "<group>"; };
+		CBCB5C022B7A79B40021357A /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		CBEDBA842B751CA400E2220E /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEDBA872B751CA400E2220E /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
-		CBEDBA892B751CA400E2220E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBEDBA8B2B751CA500E2220E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBEDBA8D2B751CA500E2220E /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
 		CBEDBA8F2B751CA500E2220E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBCB5BF92B76425C0021357A /* Flickr in Frameworks */,
+				CBCB5C042B7A79BC0021357A /* Network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,10 +66,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CBCB5BFD2B7A77140021357A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CBCB5C002B7A78A80021357A /* PhotoList.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		CBEDBA7B2B751CA400E2220E = {
 			isa = PBXGroup;
 			children = (
-				CBCB5BF62B753B370021357A /* Flickr */,
+				CBCB5C022B7A79B40021357A /* Core */,
 				CBEDBA862B751CA400E2220E /* Demo */,
 				CBEDBA982B751CA600E2220E /* DemoTests */,
 				CB19B0A22B751DC9002487A4 /* Demo.xctestplan */,
@@ -90,11 +98,11 @@
 		CBEDBA862B751CA400E2220E /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				CBEDBA872B751CA400E2220E /* DemoApp.swift */,
+				CBCB5BFD2B7A77140021357A /* Screens */,
 				CBEDBA8D2B751CA500E2220E /* Demo.entitlements */,
 				CB19B0A42B75206E002487A4 /* Info.plist */,
 				CB19B0A52B7520AA002487A4 /* Configuration.swift */,
-				CBEDBA892B751CA400E2220E /* ContentView.swift */,
-				CBEDBA872B751CA400E2220E /* DemoApp.swift */,
 				CBEDBA8B2B751CA500E2220E /* Assets.xcassets */,
 				CB19B0A32B751EE5002487A4 /* Config.xcconfig */,
 				CBEDBA8E2B751CA500E2220E /* Preview Content */,
@@ -134,7 +142,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				CBCB5BF82B76425C0021357A /* Flickr */,
+				CBCB5C032B7A79BC0021357A /* Network */,
 			);
 			productName = Demo;
 			productReference = CBEDBA842B751CA400E2220E /* Demo.app */;
@@ -221,8 +229,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB19B0A62B7520AA002487A4 /* Configuration.swift in Sources */,
-				CBEDBA8A2B751CA400E2220E /* ContentView.swift in Sources */,
 				CBEDBA882B751CA400E2220E /* DemoApp.swift in Sources */,
+				CBCB5C012B7A78A80021357A /* PhotoList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,9 +521,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CBCB5BF82B76425C0021357A /* Flickr */ = {
+		CBCB5C032B7A79BC0021357A /* Network */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Flickr;
+			productName = Network;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
