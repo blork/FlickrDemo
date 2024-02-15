@@ -6,8 +6,8 @@ let package = Package(
     platforms: [.iOS(.v17), .macOS(.v14)],
     products: [
         .library(
-            name: "PhotoList",
-            targets: ["PhotoList"]
+            name: "BrowsePhotos",
+            targets: ["BrowsePhotos"]
         ),
     ],
     dependencies: [
@@ -15,15 +15,15 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "PhotoList",
+            name: "BrowsePhotos",
             dependencies: [
                 .product(name: "Network", package: "Core"),
                 .product(name: "Design", package: "Core"),
             ]
         ),
         .testTarget(
-            name: "PhotoListTests",
-            dependencies: ["PhotoList"]
+            name: "BrowsePhotosTests",
+            dependencies: ["BrowsePhotos"]
         ),
     ]
 )

@@ -12,8 +12,10 @@ import Base
         self.client = client
     }
     
-    func load() async {
-        photos = .loading
+    func load(refreshing: Bool = false) async {
+        if !refreshing && !photos.isLoaded {
+            photos = .loading
+        }
         do {
             photos = try await .loaded(client.recent())
         } catch {
@@ -21,4 +23,3 @@ import Base
         }
     }
 }
-

@@ -43,7 +43,7 @@ public enum Photo: QueryItemConvertible {
             }
         }
         
-        public struct Item: Decodable, Identifiable, PhotoRepresentable {
+        public struct Item: Decodable, Identifiable, Hashable, PhotoRepresentable {
             public let id: Photo.Detail.ID
             public let owner: String
             public let secret: String
@@ -53,7 +53,7 @@ public enum Photo: QueryItemConvertible {
         }
     }
     
-    public struct Detail: Identifiable, Decodable, PhotoRepresentable {
+    public struct Detail: Identifiable, Decodable, Hashable, PhotoRepresentable {
         public let id: String
         public let secret: String
         public let server: String
@@ -69,7 +69,7 @@ public enum Photo: QueryItemConvertible {
         public let photo: Photo.Detail
     }
         
-    public struct Dates: Decodable {
+    public struct Dates: Decodable, Hashable {
         public let posted: Date
         public let taken: Date
         public let lastUpdated: Date
@@ -83,12 +83,24 @@ public enum Photo: QueryItemConvertible {
 }
 
 @propertyWrapper
-public struct Wrapped<T>: Decodable where T: Decodable {
+public struct Wrapped<T: Hashable>: Equatable, Hashable, Decodable where T: Decodable {
     public var wrappedValue: T
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         wrappedValue = try! container.decode(WrappedValue<T>.self).value
+    }
+    
+    public init(_ wrappedValue: T) {
+        self.wrappedValue = wrappedValue
+    }
+    
+    public static func == (lhs: Wrapped<T>, rhs: Wrapped<T>) -> Bool {
+        lhs.wrappedValue == rhs.wrappedValue
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(wrappedValue)
     }
 }
 
@@ -100,12 +112,42 @@ struct WrappedValue<T>: Decodable where T: Decodable {
     }
 }
 
+public extension Photo.List.Item {
+    static var preview: Photo.List.Item {
+        .init(id: "X", owner: "John Appleseed", secret: "X", server: "X", farm: 1, title: "An Example Image")
+    }
+}
+
+public extension Photo.Detail {
+    static var preview: Photo.Detail {
+        .init(
+            id: "53517142775",
+            secret: "00eaa0df09",
+            server: "65535",
+            farm: 66,
+            title: .init("An Example Image"),
+            description: .init("Hello, World"),
+            dates: .init(
+                posted: .init(
+                    timeIntervalSince1970: 0
+                ),
+                taken: .init(
+                    timeIntervalSince1970: 0
+                ),
+                lastUpdated: .init(
+                    timeIntervalSince1970: 0
+                )
+            )
+        )
+    }
+}
+
 public extension [Photo.List.Item] {
     static var preview: [Photo.List.Item] {
         [
             .init(id: "X", owner: "John Appleseed", secret: "X", server: "X", farm: 1, title: "An Example Image"),
             .init(id: "Y", owner: "Brenda Fuller", secret: "Y", server: "Y", farm: 1, title: "Another Example Image"),
-            .init(id: "Z", owner: "Otto Mcdaniel", secret: "Z", server: "Z", farm: 1, title: "One More Example Image")
+            .init(id: "Z", owner: "Otto Mcdaniel", secret: "Z", server: "Z", farm: 1, title: "One More Example Image"),
         ]
     }
 }

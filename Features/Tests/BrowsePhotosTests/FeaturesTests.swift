@@ -1,5 +1,5 @@
 import XCTest
-@testable import PhotoList
+//@testable import BrowsePhotos
 
 final class PhotoListTests: XCTestCase {
     func testExample() throws {

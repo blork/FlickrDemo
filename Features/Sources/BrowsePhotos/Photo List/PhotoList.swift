@@ -12,14 +12,20 @@ public struct PhotoList: View {
     
     public var body: some View {
         List {
-            ForEach(viewModel.photos.value ?? []) { photo in
-                Text(photo.title)
+            ForEach(viewModel.photos.value ?? .preview) { photo in
+                NavigationLink(photo.title, value: photo)
             }
         }
+        .animation(.bouncy, value: viewModel.photos.value)
+        .listStyle(.plain)
         .loading(resource: viewModel.photos)
         .task {
             await viewModel.load()
         }
+        .refreshable {
+            await viewModel.load(refreshing: true)
+        }
+        .navigationTitle("Recent Photos")
     }
 }
 

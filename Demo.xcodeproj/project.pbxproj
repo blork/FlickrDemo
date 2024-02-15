@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB19B0A62B7520AA002487A4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19B0A52B7520AA002487A4 /* Configuration.swift */; };
-		CBCB5C072B7A7B400021357A /* PhotoList in Frameworks */ = {isa = PBXBuildFile; productRef = CBCB5C062B7A7B400021357A /* PhotoList */; };
+		CBCA46E52B7BCE2600CA6793 /* BrowsePhotos in Frameworks */ = {isa = PBXBuildFile; productRef = CBCA46E42B7BCE2600CA6793 /* BrowsePhotos */; };
 		CBEDBA882B751CA400E2220E /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBA872B751CA400E2220E /* DemoApp.swift */; };
 		CBEDBA8C2B751CA500E2220E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBA8B2B751CA500E2220E /* Assets.xcassets */; };
 		CBEDBA902B751CA500E2220E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBA8F2B751CA500E2220E /* Preview Assets.xcassets */; };
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBCB5C072B7A7B400021357A /* PhotoList in Frameworks */,
+				CBCA46E52B7BCE2600CA6793 /* BrowsePhotos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +143,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				CBCB5C062B7A7B400021357A /* PhotoList */,
+				CBCA46E42B7BCE2600CA6793 /* BrowsePhotos */,
 			);
 			productName = Demo;
 			productReference = CBEDBA842B751CA400E2220E /* Demo.app */;
@@ -521,9 +521,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CBCB5C062B7A7B400021357A /* PhotoList */ = {
+		CBCA46E42B7BCE2600CA6793 /* BrowsePhotos */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = PhotoList;
+			productName = BrowsePhotos;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
