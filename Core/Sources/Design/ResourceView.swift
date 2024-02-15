@@ -18,7 +18,7 @@ struct ResourceViewModifier<T>: ViewModifier {
                     EmptyView()
                 }
             }
-            .disabled(resource.isLoading)
+            .disabled(!resource.isLoaded)
     }
 }
 
