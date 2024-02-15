@@ -8,6 +8,10 @@ public extension String {
     Fusce pharetra leo non egestas ultrices. Cras sagittis egestas erat.
     Ut volutpat felis erat, ut laoreet mauris bibendum eget.
     """
+    
+    static var randomID: String {
+        UUID().uuidString
+    }
 }
 
 public enum PreviewError: Error {
