@@ -63,6 +63,8 @@ public enum Photo: QueryItemConvertible {
         @Wrapped public var description: String
         
         public let dates: Dates
+        
+        public let owner: User
     }
 
     public struct Response: Decodable {
@@ -137,7 +139,8 @@ public extension Photo.Detail {
                 lastUpdated: .init(
                     timeIntervalSince1970: 0
                 )
-            )
+            ),
+            owner: .preview
         )
     }
 }
