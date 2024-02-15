@@ -101,7 +101,7 @@ public class FlickrClient {
         do {
             return try decoder.decode(T.self, from: data)
         } catch {
-            Logger.default.error("Unexpected decoding error: \(error.localizedDescription)")
+            Logger.default.error("Unexpected decoding error: \(String(describing: error))")
             throw ClientError.unknown(underlying: error)
         }
     }
