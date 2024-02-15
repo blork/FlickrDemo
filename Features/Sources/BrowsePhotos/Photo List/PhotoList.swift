@@ -1,5 +1,6 @@
+import Base
 import Design
-import Network
+import Model
 import SwiftUI
 
 public struct PhotoList: View {
@@ -12,14 +13,13 @@ public struct PhotoList: View {
     
     public var body: some View {
         List {
-            ForEach(viewModel.photos.value ?? .preview) { photo in
+            ForEach(viewModel.photos.value ?? placeholders) { photo in
                 NavigationLink(photo.title, value: photo)
             }
         }
-        .animation(.bouncy, value: viewModel.photos.value)
         .listStyle(.plain)
         .loading(resource: viewModel.photos)
-        .task {
+        .oneTimeTask {
             await viewModel.load()
         }
         .refreshable {
@@ -27,8 +27,20 @@ public struct PhotoList: View {
         }
         .navigationTitle("Recent Photos")
     }
+    
+    private var placeholders: [Photo] {
+        Array(repeating: Photo.preview, count: 20)
+    }
 }
 
-#Preview {
-    PhotoList(viewModel: .init(client: StubClient(photos: .preview)))
+#Preview("Loaded") {
+    PhotoList(viewModel: .Preview(.loaded(.preview)))
+}
+
+#Preview("Loading") {
+    PhotoList(viewModel: .Preview(.loading))
+}
+
+#Preview("Error") {
+    PhotoList(viewModel: .Preview(.error(PreviewError.whoops)))
 }

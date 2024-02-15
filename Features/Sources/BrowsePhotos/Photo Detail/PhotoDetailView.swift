@@ -1,18 +1,18 @@
+import Model
 import Network
 import SwiftUI
 
 public struct PhotoDetailView: View {
     
-    public let viewModel: PhotoDetailModel
+    public let photo: Model.Photo
         
-    public init(viewModel: PhotoDetailModel) {
-        self.viewModel = viewModel
+    public init(photo: Model.Photo) {
+        self.photo = photo
     }
     
     public var body: some View {
-        let photo = viewModel.photo.value
         ZStack {
-            AsyncImage(url: viewModel.photo.value?.url) { image in
+            AsyncImage(url: photo.imageURL) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -23,9 +23,9 @@ public struct PhotoDetailView: View {
                 Spacer()
                 Divider()
                 VStack(alignment: .leading) {
-                    Text(photo?.title ?? .lipsum)
+                    Text(photo.title)
                         .font(.headline)
-                    Text(photo?.description ?? .lipsum)
+                    Text(photo.description)
                         .font(.subheadline)
                 }
                 .padding()
@@ -33,14 +33,10 @@ public struct PhotoDetailView: View {
                 .background(.thickMaterial)
             }
         }
-        .loading(resource: viewModel.photo)
-        .task {
-            await viewModel.load()
-        }
-        .navigationTitle("Details")
+        .navigationTitle(photo.title)
     }
 }
 
 #Preview {
-    PhotoDetailView(viewModel: .init(client: StubClient(detail: .preview), photo: .preview))
+    PhotoDetailView(photo: .preview)
 }

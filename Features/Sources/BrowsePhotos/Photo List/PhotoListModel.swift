@@ -1,15 +1,15 @@
 import Foundation
-import Network
+import Model
 import Base
 
 @Observable public class PhotoListModel {
     
-    var client: Client
+    var photoRepository: PhotoRepository
     
-    var photos: Resource<[Photo.List.Item]> = .loading
+    var photos: Resource<[Photo]> = .loading
     
-    public init(client: Client) {
-        self.client = client
+    public init(photoRepository: PhotoRepository) {
+        self.photoRepository = photoRepository
     }
     
     func load(refreshing: Bool = false) async {
@@ -17,9 +17,20 @@ import Base
             photos = .loading
         }
         do {
-            photos = try await .loaded(client.recent())
+            photos = try await .loaded(photoRepository.recent())
         } catch {
             photos = .error(error)
         }
+    }
+}
+
+extension PhotoListModel {
+    class Preview: PhotoListModel {
+        init(_ state: Resource<[Photo]>) {
+            super.init(photoRepository: StubPhotoRepository())
+            photos = state
+        }
+
+        override func load(refreshing: Bool = false) async {}
     }
 }

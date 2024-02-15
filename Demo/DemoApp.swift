@@ -1,21 +1,29 @@
 import Base
-import Network
 import BrowsePhotos
+import Model
+import Network
 import SwiftUI
 
 @main
 struct DemoApp: App {
     
-    var client = FlickrClient(session: URLSession.shared, apiKey: Configuration.flickrKey)
+    let client: Client
+    
+    var photoRepository: PhotoRepository
     
     @State var path: NavigationPath = .init()
+    
+    init() {
+        client = FlickrClient(session: URLSession.shared, apiKey: Configuration.flickrKey)
+        photoRepository = RemotePhotoRepository(client: client)
+    }
     
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $path) {
-                PhotoList(viewModel: .init(client: client))
-                    .navigationDestination(for: Photo.List.Item.self) { photo in
-                        PhotoDetailView(viewModel: .init(client: client, id: photo.id))
+                PhotoList(viewModel: .init(photoRepository: photoRepository))
+                    .navigationDestination(for: Model.Photo.self) { photo in
+                        PhotoDetailView(photo: photo)
                             .navigationBarTitleDisplayMode(.inline)
                     }
             }

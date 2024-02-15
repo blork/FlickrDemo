@@ -14,6 +14,10 @@ let package = Package(
             name: "Design",
             targets: ["Design"]
         ),
+        .library(
+            name: "Model",
+            targets: ["Model"]
+        ),
     ],
     dependencies: [
         .package(path: "../Base"),
@@ -33,6 +37,10 @@ let package = Package(
         .testTarget(
             name: "DesignTests",
             dependencies: ["Design"]
+        ),
+        .target(
+            name: "Model",
+            dependencies: ["Network"]
         ),
     ]
 )

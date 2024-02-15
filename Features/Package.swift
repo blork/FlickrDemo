@@ -19,6 +19,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Network", package: "Core"),
                 .product(name: "Design", package: "Core"),
+                .product(name: "Model", package: "Core"),
             ]
         ),
         .testTarget(
