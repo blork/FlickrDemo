@@ -29,18 +29,19 @@ let package = Package(
             dependencies: ["Network"]
         ),
         .target(
+            name: "Model",
+            dependencies: ["Network"]
+        ),
+        .target(
             name: "Design",
             dependencies: [
+                "Model",
                 .product(name: "Base", package: "Base"),
             ]
         ),
         .testTarget(
             name: "DesignTests",
             dependencies: ["Design"]
-        ),
-        .target(
-            name: "Model",
-            dependencies: ["Network"]
         ),
     ]
 )

@@ -14,7 +14,9 @@ public struct PhotoList: View {
     public var body: some View {
         List {
             ForEach(viewModel.photos.value ?? placeholders) { photo in
-                NavigationLink(photo.title, value: photo)
+                NavigationLink(value: photo) {
+                    PhotoView(photo: photo)
+                }
             }
         }
         .listStyle(.plain)
