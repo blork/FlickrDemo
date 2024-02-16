@@ -101,8 +101,13 @@ public class FlickrClient {
         do {
             return try decoder.decode(T.self, from: data)
         } catch {
-            Logger.default.error("Unexpected decoding error: \(String(describing: error))")
-            throw ClientError.unknown(underlying: error)
+            if let flickrError = try? decoder.decode(FlickrError.self, from: data) {
+                Logger.default.error("Error \(flickrError.code): \(flickrError.message)")
+                throw ClientError.unknown(underlying: flickrError)
+            } else {
+                Logger.default.error("Unexpected decoding error: \(String(describing: error))")
+                throw ClientError.unknown(underlying: error)
+            }
         }
     }
 }

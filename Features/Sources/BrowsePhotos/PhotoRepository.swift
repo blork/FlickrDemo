@@ -16,13 +16,15 @@ public class RemotePhotoRepository: PhotoRepository {
     
     public func recent() async throws -> [Model.Photo] {
         let results = try await client.recent()
-        return try await withThrowingTaskGroup(of: Network.Photo.Detail.self, returning: [Model.Photo].self) { taskGroup in
+        return try await withThrowingTaskGroup(of: Network.Photo.Detail?.self, returning: [Model.Photo].self) { taskGroup in
             for result in results {
-                taskGroup.addTask { try await self.client.info(for: result.id) }
+                taskGroup.addTask { try? await self.client.info(for: result.id) }
             }
-            
+
             return try await taskGroup.reduce(into: [Model.Photo]()) { partialResult, detail in
-                partialResult.append(.init(detail))
+                if let detail {
+                    partialResult.append(.init(detail))
+                }
             }
         }
     }
