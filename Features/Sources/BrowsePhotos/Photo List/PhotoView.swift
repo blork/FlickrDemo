@@ -22,7 +22,7 @@ public struct PhotoView: View {
                 Color.gray
             }
             .frame(width: imageWidth, height: imageHeight)
-            .clipShape(.rect(cornerRadius: 8))
+            .clipShape(.rect(cornerRadius: .cornerRadius(.regular)))
             
             VStack(alignment: .leading) {
                 Text(photo.title.isEmpty ? "Untitled" : photo.title)

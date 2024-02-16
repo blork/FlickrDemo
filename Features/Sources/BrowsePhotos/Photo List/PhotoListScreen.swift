@@ -3,11 +3,11 @@ import Design
 import Model
 import SwiftUI
 
-public struct PhotoList: View {
+public struct PhotoListScreen: View {
     
-    public let viewModel: PhotoListModel
+    public let viewModel: PhotoListViewModel
     
-    public init(viewModel: PhotoListModel) {
+    public init(viewModel: PhotoListViewModel) {
         self.viewModel = viewModel
     }
     
@@ -36,13 +36,13 @@ public struct PhotoList: View {
 }
 
 #Preview("Loaded") {
-    PhotoList(viewModel: .Preview(.loaded(.preview)))
+    PhotoListScreen(viewModel: .Preview(.loaded(.preview)))
 }
 
 #Preview("Loading") {
-    PhotoList(viewModel: .Preview(.loading))
+    PhotoListScreen(viewModel: .Preview(.loading))
 }
 
 #Preview("Error") {
-    PhotoList(viewModel: .Preview(.error(PreviewError.whoops)))
+    PhotoListScreen(viewModel: .Preview(.error(PreviewError.whoops)))
 }

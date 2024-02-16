@@ -21,9 +21,9 @@ struct DemoApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $path) {
-                PhotoList(viewModel: .init(photoRepository: photoRepository))
+                PhotoListScreen(viewModel: .init(photoRepository: photoRepository))
                     .navigationDestination(for: Model.Photo.self) { photo in
-                        PhotoDetailView(photo: photo)
+                        PhotoDetailScreen(photo: photo)
                             .navigationBarTitleDisplayMode(.inline)
                     }
             }

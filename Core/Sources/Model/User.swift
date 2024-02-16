@@ -23,7 +23,7 @@ public struct User: Identifiable, Hashable {
     }
 }
 
-extension User {
+public extension User {
     static var preview: User {
         .init(id: .randomID, username: "username", realName: "Real Name", location: "Location")
     }

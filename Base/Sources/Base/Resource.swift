@@ -32,7 +32,7 @@ public enum Resource<T> {
         }
     }
     
-    public var isFailed: Bool {
+    public var isError: Bool {
         switch self {
         case .error:
             return true

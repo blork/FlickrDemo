@@ -45,6 +45,6 @@ public extension Photo {
 
 public extension [Photo] {
     static var preview: [Photo] {
-        Array(repeating: .preview, count: 20)
+        (0..<20).map { _ in Photo.preview }
     }
 }

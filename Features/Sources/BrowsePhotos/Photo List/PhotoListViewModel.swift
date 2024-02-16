@@ -2,9 +2,9 @@ import Foundation
 import Model
 import Base
 
-@Observable public class PhotoListModel {
+@Observable public class PhotoListViewModel {
     
-    var photoRepository: PhotoRepository
+    private var photoRepository: PhotoRepository
     
     var photos: Resource<[Photo]> = .loading
     
@@ -24,8 +24,8 @@ import Base
     }
 }
 
-extension PhotoListModel {
-    class Preview: PhotoListModel {
+extension PhotoListViewModel {
+    class Preview: PhotoListViewModel {
         init(_ state: Resource<[Photo]>) {
             super.init(photoRepository: StubPhotoRepository())
             photos = state
