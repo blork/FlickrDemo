@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CB19B0A62B7520AA002487A4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19B0A52B7520AA002487A4 /* Configuration.swift */; };
+		CBB5ABDA2B7FAAD900546D3B /* BrowsePhotosMiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5ABD92B7FAAD900546D3B /* BrowsePhotosMiniApp.swift */; };
+		CBB5ABE72B7FAAF900546D3B /* BrowsePhotos in Frameworks */ = {isa = PBXBuildFile; productRef = CBB5ABE62B7FAAF900546D3B /* BrowsePhotos */; };
+		CBB5ABE92B7FAC6400546D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB5ABE82B7FAC6400546D3B /* Assets.xcassets */; };
+		CBB5ABEB2B7FACF000546D3B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5ABEA2B7FACF000546D3B /* Launch Screen.storyboard */; };
 		CBCA46E52B7BCE2600CA6793 /* BrowsePhotos in Frameworks */ = {isa = PBXBuildFile; productRef = CBCA46E42B7BCE2600CA6793 /* BrowsePhotos */; };
 		CBEDBA882B751CA400E2220E /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBA872B751CA400E2220E /* DemoApp.swift */; };
 		CBEDBA8C2B751CA500E2220E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBA8B2B751CA500E2220E /* Assets.xcassets */; };
@@ -29,6 +33,11 @@
 		CB19B0A32B751EE5002487A4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		CB19B0A42B75206E002487A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB19B0A52B7520AA002487A4 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		CBB5ABD72B7FAAD900546D3B /* BrowsePhotosMiniApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowsePhotosMiniApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB5ABD92B7FAAD900546D3B /* BrowsePhotosMiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePhotosMiniApp.swift; sourceTree = "<group>"; };
+		CBB5ABE22B7FAADA00546D3B /* BrowsePhotosMiniApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrowsePhotosMiniApp.entitlements; sourceTree = "<group>"; };
+		CBB5ABE82B7FAC6400546D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBB5ABEA2B7FACF000546D3B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CBCA46E12B7A7E1300CA6793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Base; sourceTree = "<group>"; };
 		CBCB5C022B7A79B40021357A /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		CBCB5C052B7A7B070021357A /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
@@ -41,6 +50,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CBB5ABD42B7FAAD900546D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB5ABE72B7FAAF900546D3B /* BrowsePhotos in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBEDBA812B751CA400E2220E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,6 +76,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CBB5ABD82B7FAAD900546D3B /* BrowsePhotosMiniApp */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5ABD92B7FAAD900546D3B /* BrowsePhotosMiniApp.swift */,
+				CBB5ABE22B7FAADA00546D3B /* BrowsePhotosMiniApp.entitlements */,
+				CBB5ABEA2B7FACF000546D3B /* Launch Screen.storyboard */,
+				CBB5ABE82B7FAC6400546D3B /* Assets.xcassets */,
+			);
+			path = BrowsePhotosMiniApp;
+			sourceTree = "<group>";
+		};
 		CBCB5BF72B7642580021357A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +110,7 @@
 				CBEDBA862B751CA400E2220E /* Demo */,
 				CBEDBA982B751CA600E2220E /* DemoTests */,
 				CB19B0A22B751DC9002487A4 /* Demo.xctestplan */,
+				CBB5ABD82B7FAAD900546D3B /* BrowsePhotosMiniApp */,
 				CBEDBA852B751CA400E2220E /* Products */,
 				CBCB5BF72B7642580021357A /* Frameworks */,
 			);
@@ -92,6 +121,7 @@
 			children = (
 				CBEDBA842B751CA400E2220E /* Demo.app */,
 				CBEDBA952B751CA600E2220E /* DemoTests.xctest */,
+				CBB5ABD72B7FAAD900546D3B /* BrowsePhotosMiniApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +159,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CBB5ABD62B7FAAD900546D3B /* BrowsePhotosMiniApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBB5ABE52B7FAADA00546D3B /* Build configuration list for PBXNativeTarget "BrowsePhotosMiniApp" */;
+			buildPhases = (
+				CBB5ABD32B7FAAD900546D3B /* Sources */,
+				CBB5ABD42B7FAAD900546D3B /* Frameworks */,
+				CBB5ABD52B7FAAD900546D3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrowsePhotosMiniApp;
+			packageProductDependencies = (
+				CBB5ABE62B7FAAF900546D3B /* BrowsePhotos */,
+			);
+			productName = BrowsePhotosMiniApp;
+			productReference = CBB5ABD72B7FAAD900546D3B /* BrowsePhotosMiniApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		CBEDBA832B751CA400E2220E /* Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBEDBAA92B751CA600E2220E /* Build configuration list for PBXNativeTarget "Demo" */;
@@ -177,6 +227,9 @@
 				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
+					CBB5ABD62B7FAAD900546D3B = {
+						CreatedOnToolsVersion = 15.1;
+					};
 					CBEDBA832B751CA400E2220E = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -201,11 +254,21 @@
 			targets = (
 				CBEDBA832B751CA400E2220E /* Demo */,
 				CBEDBA942B751CA600E2220E /* DemoTests */,
+				CBB5ABD62B7FAAD900546D3B /* BrowsePhotosMiniApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CBB5ABD52B7FAAD900546D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB5ABEB2B7FACF000546D3B /* Launch Screen.storyboard in Resources */,
+				CBB5ABE92B7FAC6400546D3B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBEDBA822B751CA400E2220E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +288,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CBB5ABD32B7FAAD900546D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB5ABDA2B7FAAD900546D3B /* BrowsePhotosMiniApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBEDBA802B751CA400E2220E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +323,72 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		CBB5ABE32B7FAADA00546D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BrowsePhotosMiniApp/BrowsePhotosMiniApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Browse Photos";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blork.BrowsePhotosMiniApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CBB5ABE42B7FAADA00546D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BrowsePhotosMiniApp/BrowsePhotosMiniApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Browse Photos";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blork.BrowsePhotosMiniApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		CBEDBAA72B751CA600E2220E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -491,6 +628,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CBB5ABE52B7FAADA00546D3B /* Build configuration list for PBXNativeTarget "BrowsePhotosMiniApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBB5ABE32B7FAADA00546D3B /* Debug */,
+				CBB5ABE42B7FAADA00546D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CBEDBA7F2B751CA400E2220E /* Build configuration list for PBXProject "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -521,6 +667,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CBB5ABE62B7FAAF900546D3B /* BrowsePhotos */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrowsePhotos;
+		};
 		CBCA46E42B7BCE2600CA6793 /* BrowsePhotos */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrowsePhotos;

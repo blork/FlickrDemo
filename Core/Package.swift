@@ -34,7 +34,10 @@ let package = Package(
         ),
         .target(
             name: "Model",
-            dependencies: ["API"]
+            dependencies: [
+                "API",
+                .product(name: "Base", package: "Base"),
+            ]
         ),
         .target(
             name: "Design",

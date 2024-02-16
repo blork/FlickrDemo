@@ -3,16 +3,15 @@ import Base
 import BrowsePhotos
 import Model
 import SwiftUI
+import MapKit
 
 @main
 struct DemoApp: App {
     
     let client: Client
     
-    var photoRepository: PhotoRepository
-    
-    @State var path: NavigationPath = .init()
-    
+    let photoRepository: PhotoRepository
+        
     init() {
         client = FlickrClient(session: URLSession.shared, apiKey: Configuration.flickrKey)
         photoRepository = RemotePhotoRepository(client: client)
@@ -20,11 +19,15 @@ struct DemoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $path) {
-                PhotoListScreen(viewModel: .init(photoRepository: photoRepository))
-                    .navigationDestination(for: Model.Photo.self) { photo in
-                        PhotoDetailScreen(photo: photo)
-                            .navigationBarTitleDisplayMode(.inline)
+            TabView {
+                BrowsePhotos.Root(photoRepository: photoRepository)
+                    .tabItem {
+                        Label("Browse", systemImage: "photo.on.rectangle.angled")
+                    }
+                
+                Map()
+                    .tabItem {
+                        Label("Nearby", systemImage: "map")
                     }
             }
         }
