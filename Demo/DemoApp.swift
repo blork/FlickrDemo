@@ -3,7 +3,7 @@ import Base
 import BrowsePhotos
 import Model
 import SwiftUI
-import MapKit
+import Nearby
 
 @main
 struct DemoApp: App {
@@ -25,7 +25,7 @@ struct DemoApp: App {
                         Label("Browse", systemImage: "photo.on.rectangle.angled")
                     }
                 
-                Map()
+                Nearby.Root()
                     .tabItem {
                         Label("Nearby", systemImage: "map")
                     }

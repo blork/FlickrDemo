@@ -12,6 +12,11 @@
 		CBB5ABE72B7FAAF900546D3B /* BrowsePhotos in Frameworks */ = {isa = PBXBuildFile; productRef = CBB5ABE62B7FAAF900546D3B /* BrowsePhotos */; };
 		CBB5ABE92B7FAC6400546D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB5ABE82B7FAC6400546D3B /* Assets.xcassets */; };
 		CBB5ABEB2B7FACF000546D3B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5ABEA2B7FACF000546D3B /* Launch Screen.storyboard */; };
+		CBB5ABED2B7FB22E00546D3B /* Nearby in Frameworks */ = {isa = PBXBuildFile; productRef = CBB5ABEC2B7FB22E00546D3B /* Nearby */; };
+		CBB5ABF52B7FB29C00546D3B /* NearbyMiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5ABF42B7FB29C00546D3B /* NearbyMiniApp.swift */; };
+		CBB5ABF92B7FB29D00546D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB5ABF82B7FB29D00546D3B /* Assets.xcassets */; };
+		CBB5AC022B7FB2D200546D3B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5AC012B7FB2D200546D3B /* Launch Screen.storyboard */; };
+		CBB5AC042B7FB2E300546D3B /* Nearby in Frameworks */ = {isa = PBXBuildFile; productRef = CBB5AC032B7FB2E300546D3B /* Nearby */; };
 		CBCA46E52B7BCE2600CA6793 /* BrowsePhotos in Frameworks */ = {isa = PBXBuildFile; productRef = CBCA46E42B7BCE2600CA6793 /* BrowsePhotos */; };
 		CBEDBA882B751CA400E2220E /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBA872B751CA400E2220E /* DemoApp.swift */; };
 		CBEDBA8C2B751CA500E2220E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBA8B2B751CA500E2220E /* Assets.xcassets */; };
@@ -38,6 +43,11 @@
 		CBB5ABE22B7FAADA00546D3B /* BrowsePhotosMiniApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrowsePhotosMiniApp.entitlements; sourceTree = "<group>"; };
 		CBB5ABE82B7FAC6400546D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBB5ABEA2B7FACF000546D3B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		CBB5ABF22B7FB29C00546D3B /* NearbyMiniApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbyMiniApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB5ABF42B7FB29C00546D3B /* NearbyMiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyMiniApp.swift; sourceTree = "<group>"; };
+		CBB5ABF82B7FB29D00546D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBB5ABFD2B7FB29D00546D3B /* NearbyMiniApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NearbyMiniApp.entitlements; sourceTree = "<group>"; };
+		CBB5AC012B7FB2D200546D3B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CBCA46E12B7A7E1300CA6793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Base; sourceTree = "<group>"; };
 		CBCB5C022B7A79B40021357A /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		CBCB5C052B7A7B070021357A /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
@@ -58,11 +68,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBB5ABEF2B7FB29C00546D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB5AC042B7FB2E300546D3B /* Nearby in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBEDBA812B751CA400E2220E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CBCA46E52B7BCE2600CA6793 /* BrowsePhotos in Frameworks */,
+				CBB5ABED2B7FB22E00546D3B /* Nearby in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +104,17 @@
 				CBB5ABE82B7FAC6400546D3B /* Assets.xcassets */,
 			);
 			path = BrowsePhotosMiniApp;
+			sourceTree = "<group>";
+		};
+		CBB5ABF32B7FB29C00546D3B /* NearbyMiniApp */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5ABF42B7FB29C00546D3B /* NearbyMiniApp.swift */,
+				CBB5AC012B7FB2D200546D3B /* Launch Screen.storyboard */,
+				CBB5ABF82B7FB29D00546D3B /* Assets.xcassets */,
+				CBB5ABFD2B7FB29D00546D3B /* NearbyMiniApp.entitlements */,
+			);
+			path = NearbyMiniApp;
 			sourceTree = "<group>";
 		};
 		CBCB5BF72B7642580021357A /* Frameworks */ = {
@@ -111,6 +141,7 @@
 				CBEDBA982B751CA600E2220E /* DemoTests */,
 				CB19B0A22B751DC9002487A4 /* Demo.xctestplan */,
 				CBB5ABD82B7FAAD900546D3B /* BrowsePhotosMiniApp */,
+				CBB5ABF32B7FB29C00546D3B /* NearbyMiniApp */,
 				CBEDBA852B751CA400E2220E /* Products */,
 				CBCB5BF72B7642580021357A /* Frameworks */,
 			);
@@ -122,6 +153,7 @@
 				CBEDBA842B751CA400E2220E /* Demo.app */,
 				CBEDBA952B751CA600E2220E /* DemoTests.xctest */,
 				CBB5ABD72B7FAAD900546D3B /* BrowsePhotosMiniApp.app */,
+				CBB5ABF22B7FB29C00546D3B /* NearbyMiniApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +211,26 @@
 			productReference = CBB5ABD72B7FAAD900546D3B /* BrowsePhotosMiniApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CBB5ABF12B7FB29C00546D3B /* NearbyMiniApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBB5ABFE2B7FB29D00546D3B /* Build configuration list for PBXNativeTarget "NearbyMiniApp" */;
+			buildPhases = (
+				CBB5ABEE2B7FB29C00546D3B /* Sources */,
+				CBB5ABEF2B7FB29C00546D3B /* Frameworks */,
+				CBB5ABF02B7FB29C00546D3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NearbyMiniApp;
+			packageProductDependencies = (
+				CBB5AC032B7FB2E300546D3B /* Nearby */,
+			);
+			productName = NearbyMiniApp;
+			productReference = CBB5ABF22B7FB29C00546D3B /* NearbyMiniApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		CBEDBA832B751CA400E2220E /* Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBEDBAA92B751CA600E2220E /* Build configuration list for PBXNativeTarget "Demo" */;
@@ -194,6 +246,7 @@
 			name = Demo;
 			packageProductDependencies = (
 				CBCA46E42B7BCE2600CA6793 /* BrowsePhotos */,
+				CBB5ABEC2B7FB22E00546D3B /* Nearby */,
 			);
 			productName = Demo;
 			productReference = CBEDBA842B751CA400E2220E /* Demo.app */;
@@ -230,6 +283,9 @@
 					CBB5ABD62B7FAAD900546D3B = {
 						CreatedOnToolsVersion = 15.1;
 					};
+					CBB5ABF12B7FB29C00546D3B = {
+						CreatedOnToolsVersion = 15.1;
+					};
 					CBEDBA832B751CA400E2220E = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -255,6 +311,7 @@
 				CBEDBA832B751CA400E2220E /* Demo */,
 				CBEDBA942B751CA600E2220E /* DemoTests */,
 				CBB5ABD62B7FAAD900546D3B /* BrowsePhotosMiniApp */,
+				CBB5ABF12B7FB29C00546D3B /* NearbyMiniApp */,
 			);
 		};
 /* End PBXProject section */
@@ -266,6 +323,15 @@
 			files = (
 				CBB5ABEB2B7FACF000546D3B /* Launch Screen.storyboard in Resources */,
 				CBB5ABE92B7FAC6400546D3B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBB5ABF02B7FB29C00546D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB5AC022B7FB2D200546D3B /* Launch Screen.storyboard in Resources */,
+				CBB5ABF92B7FB29D00546D3B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +359,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBB5ABDA2B7FAAD900546D3B /* BrowsePhotosMiniApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBB5ABEE2B7FB29C00546D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB5ABF52B7FB29C00546D3B /* NearbyMiniApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +453,74 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blork.BrowsePhotosMiniApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CBB5ABFF2B7FB29D00546D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NearbyMiniApp/NearbyMiniApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Nearby;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blork.NearbyMiniApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CBB5AC002B7FB29D00546D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NearbyMiniApp/NearbyMiniApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Nearby;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blork.NearbyMiniApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -637,6 +779,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		CBB5ABFE2B7FB29D00546D3B /* Build configuration list for PBXNativeTarget "NearbyMiniApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBB5ABFF2B7FB29D00546D3B /* Debug */,
+				CBB5AC002B7FB29D00546D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CBEDBA7F2B751CA400E2220E /* Build configuration list for PBXProject "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -670,6 +821,14 @@
 		CBB5ABE62B7FAAF900546D3B /* BrowsePhotos */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrowsePhotos;
+		};
+		CBB5ABEC2B7FB22E00546D3B /* Nearby */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Nearby;
+		};
+		CBB5AC032B7FB2E300546D3B /* Nearby */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Nearby;
 		};
 		CBCA46E42B7BCE2600CA6793 /* BrowsePhotos */ = {
 			isa = XCSwiftPackageProductDependency;

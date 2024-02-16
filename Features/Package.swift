@@ -9,6 +9,10 @@ let package = Package(
             name: "BrowsePhotos",
             targets: ["BrowsePhotos"]
         ),
+        .library(
+            name: "Nearby",
+            targets: ["Nearby"]
+        ),
     ],
     dependencies: [
         .package(path: "../Core"),
@@ -30,6 +34,21 @@ let package = Package(
             name: "BrowsePhotosTests",
             dependencies: [
                 "BrowsePhotos",
+                .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
+            ]
+        ),
+        .target(
+            name: "Nearby",
+            dependencies: [
+                .product(name: "API", package: "Core"),
+                .product(name: "Design", package: "Core"),
+                .product(name: "Model", package: "Core"),
+            ]
+        ),
+        .testTarget(
+            name: "NearbyTests",
+            dependencies: [
+                "Nearby",
                 .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
             ]
         ),
