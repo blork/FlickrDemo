@@ -17,7 +17,7 @@ let package = Package(
         .target(
             name: "BrowsePhotos",
             dependencies: [
-                .product(name: "Network", package: "Core"),
+                .product(name: "API", package: "Core"),
                 .product(name: "Design", package: "Core"),
                 .product(name: "Model", package: "Core"),
             ]

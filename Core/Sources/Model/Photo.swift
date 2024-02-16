@@ -1,6 +1,6 @@
 import Base
 import Foundation
-import Network
+import API
 
 public struct Photo: Identifiable, Hashable {
     public let id: String
@@ -11,7 +11,7 @@ public struct Photo: Identifiable, Hashable {
 
     public let owner: User
     
-    public init(_ photo: Network.Photo.Detail) {
+    public init(_ photo: API.Photo.Detail) {
         id = photo.id
         title = photo.title
         description = photo.description

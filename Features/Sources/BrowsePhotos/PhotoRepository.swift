@@ -1,6 +1,6 @@
 import Foundation
 import Model
-import Network
+import API
 
 public protocol PhotoRepository {
     func recent() async throws -> [Model.Photo]
@@ -16,7 +16,7 @@ public class RemotePhotoRepository: PhotoRepository {
     
     public func recent() async throws -> [Model.Photo] {
         let results = try await client.recent()
-        return try await withThrowingTaskGroup(of: Network.Photo.Detail?.self, returning: [Model.Photo].self) { taskGroup in
+        return try await withThrowingTaskGroup(of: API.Photo.Detail?.self, returning: [Model.Photo].self) { taskGroup in
             for result in results {
                 taskGroup.addTask { try? await self.client.info(for: result.id) }
             }

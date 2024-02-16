@@ -1,6 +1,6 @@
 import Base
 import Foundation
-import Network
+import API
 
 public struct User: Identifiable, Hashable {
     public let id: String
@@ -8,7 +8,7 @@ public struct User: Identifiable, Hashable {
     public let realName: String
     public let location: String
     
-    public init(_ user: Network.User) {
+    public init(_ user: API.User) {
         id = user.id
         username = user.username
         realName = user.realName

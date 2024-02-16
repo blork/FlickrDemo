@@ -1,5 +1,5 @@
 import Model
-import Network
+import API
 import SwiftUI
 
 public struct PhotoDetailView: View {

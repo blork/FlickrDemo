@@ -1,7 +1,7 @@
+import API
 import Base
 import BrowsePhotos
 import Model
-import Network
 import SwiftUI
 
 @main

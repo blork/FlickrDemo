@@ -1,4 +1,4 @@
-@testable import Network
+@testable import API
 import XCTest
 
 final class DateDecoderTests: XCTestCase {

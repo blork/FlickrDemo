@@ -7,8 +7,8 @@ let package = Package(
     platforms: [.iOS(.v17), .macOS(.v14)],
     products: [
         .library(
-            name: "Network",
-            targets: ["Network"]
+            name: "API",
+            targets: ["API"]
         ),
         .library(
             name: "Design",
@@ -23,19 +23,19 @@ let package = Package(
         .package(path: "../Base"),
     ],
     targets: [
-        .target(name: "Network"),
+        .target(name: "API"),
         .testTarget(
-            name: "NetworkTests",
-            dependencies: ["Network"]
+            name: "APITests",
+            dependencies: ["API"]
         ),
         .target(
             name: "Model",
-            dependencies: ["Network"]
+            dependencies: ["API"]
         ),
         .target(
             name: "Design",
             dependencies: [
-                "Model",
+                "API", "Model",
                 .product(name: "Base", package: "Base"),
             ]
         ),
