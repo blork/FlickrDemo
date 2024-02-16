@@ -1,15 +1,29 @@
 import MapKit
+import Model
 import SwiftUI
+import BrowsePhotos
 
 public struct Root: View {
     
-    public init() {}
+    let locationRepository: LocationRepository
     
+    @State private var path: NavigationPath = .init()
+    
+    public init(locationRepository: LocationRepository) {
+        self.locationRepository = locationRepository
+    }
+
     public var body: some View {
-        Map()
+        NavigationStack {
+            LocationMapScreen(viewModel: .init(locationRepository: locationRepository))
+                .navigationDestination(for: Model.Photo.self) { photo in
+                    PhotoDetailScreen(photo: photo)
+                        .navigationBarTitleDisplayMode(.inline)
+                }
+        }
     }
 }
 
 #Preview {
-    Root()
+    Root(locationRepository: StubLocationRepository(photos: .preview))
 }

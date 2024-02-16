@@ -11,10 +11,12 @@ struct DemoApp: App {
     let client: Client
     
     let photoRepository: PhotoRepository
-        
+    let locationRepository: LocationRepository
+
     init() {
         client = FlickrClient(session: URLSession.shared, apiKey: Configuration.flickrKey)
         photoRepository = RemotePhotoRepository(client: client)
+        locationRepository = RemoteLocationRepository(client: client)
     }
     
     var body: some Scene {
@@ -25,7 +27,7 @@ struct DemoApp: App {
                         Label("Browse", systemImage: "photo.on.rectangle.angled")
                     }
                 
-                Nearby.Root()
+                Nearby.Root(locationRepository: locationRepository)
                     .tabItem {
                         Label("Nearby", systemImage: "map")
                     }

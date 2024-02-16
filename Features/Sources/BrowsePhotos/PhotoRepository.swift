@@ -55,9 +55,3 @@ public class StubPhotoRepository: PhotoRepository {
         case notSetUp
     }
 }
-
-public extension StubPhotoRepository {
-    static var preview: some PhotoRepository {
-        StubPhotoRepository(photos: Array(repeating: .preview, count: 20))
-    }
-}

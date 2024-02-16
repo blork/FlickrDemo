@@ -31,7 +31,7 @@ extension FlickrClient: Client {
     }
     
     public func info(for id: Photo.Detail.ID) async throws -> Photo.Detail {
-        let response: Photo.Response = try await perform(request(.GET, Photo.query(id: id)))
+        let response: Photo.Response = try await perform(request(.GET, Photo.info(id: id)))
         return response.photo
     }
 }

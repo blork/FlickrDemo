@@ -1,19 +1,19 @@
 import Base
-@testable import BrowsePhotos
+@testable import Nearby
 import XCTest
 
-final class PhotoListViewModelTests: XCTestCase {
+final class LocationMapViewModelTests: XCTestCase {
 
-    func test_photoInitialValueIsLoading() async throws {
-        let repo = StubPhotoRepository()
-        let vm = PhotoListViewModel(photoRepository: repo)
+    func test_photosInitialValueIsLoading() async throws {
+        let repo = StubLocationRepository()
+        let vm = LocationMapViewModel(locationRepository: repo)
                 
         XCTAssertTrue(vm.photos.isLoading)
     }
 
     func test_repoThrowsError_load_photosContainsError() async throws {
-        let repo = StubPhotoRepository(error: PreviewError.whoops)
-        let vm = PhotoListViewModel(photoRepository: repo)
+        let repo = StubLocationRepository(error: PreviewError.whoops)
+        let vm = LocationMapViewModel(locationRepository: repo)
         
         await vm.load()
         
@@ -21,8 +21,8 @@ final class PhotoListViewModelTests: XCTestCase {
     }
     
     func test_noPhotosReturned_load_photosIsLoadedAndEmpty() async throws {
-        let repo = StubPhotoRepository(photos: [])
-        let vm = PhotoListViewModel(photoRepository: repo)
+        let repo = StubLocationRepository(photos: [])
+        let vm = LocationMapViewModel(locationRepository: repo)
         
         await vm.load()
         
@@ -31,11 +31,11 @@ final class PhotoListViewModelTests: XCTestCase {
     }
     
     func test_photosReturned_load_photosIsLoadedAndContainsCorrectPhotos() async throws {
-        let repo = StubPhotoRepository(photos: [
+        let repo = StubLocationRepository(photos: [
             .init(id: "1", title: "1", description: "1", takenOn: .now, imageURL: URL(string: "example.com")!, owner: .preview, latitude: 0, longitude: 0),
             .init(id: "2", title: "2", description: "2", takenOn: .now, imageURL: URL(string: "example.com")!, owner: .preview, latitude: 0, longitude: 0),
         ])
-        let vm = PhotoListViewModel(photoRepository: repo)
+        let vm = LocationMapViewModel(locationRepository: repo)
         
         await vm.load()
         

@@ -1,12 +1,12 @@
 import Foundation
 
 public enum Photo: QueryItemConvertible {
-    case query(id: Photo.Detail.ID)
+    case info(id: Photo.Detail.ID)
     case recent
 
     var queryItems: [URLQueryItem] {
         switch self {
-        case let .query(id):
+        case let .info(id):
             [
                 URLQueryItem(name: "method", value: "flickr.photos.getInfo"),
                 URLQueryItem(name: "photo_id", value: id),
@@ -50,6 +50,8 @@ public enum Photo: QueryItemConvertible {
             public let server: String
             public let farm: Int
             public let title: String
+            public let latitude: String?
+            public let longitude: String?
         }
     }
     
@@ -116,7 +118,16 @@ struct WrappedValue<T>: Decodable where T: Decodable {
 
 public extension Photo.List.Item {
     static var preview: Photo.List.Item {
-        .init(id: "X", owner: "John Appleseed", secret: "X", server: "X", farm: 1, title: "An Example Image")
+        .init(
+            id: "X",
+            owner: "John Appleseed",
+            secret: "X",
+            server: "X",
+            farm: 1,
+            title: "An Example Image",
+            latitude: "38.897675",
+            longitude: "-77.036530"
+        )
     }
 }
 
@@ -148,9 +159,36 @@ public extension Photo.Detail {
 public extension [Photo.List.Item] {
     static var preview: [Photo.List.Item] {
         [
-            .init(id: "X", owner: "John Appleseed", secret: "X", server: "X", farm: 1, title: "An Example Image"),
-            .init(id: "Y", owner: "Brenda Fuller", secret: "Y", server: "Y", farm: 1, title: "Another Example Image"),
-            .init(id: "Z", owner: "Otto Mcdaniel", secret: "Z", server: "Z", farm: 1, title: "One More Example Image"),
+            .init(
+                id: "X",
+                owner: "John Appleseed",
+                secret: "X",
+                server: "X",
+                farm: 1,
+                title: "An Example Image",
+                latitude: "38.897675",
+                longitude: "-77.036530"
+            ),
+            .init(
+                id: "Y",
+                owner: "Brenda Fuller",
+                secret: "Y",
+                server: "Y",
+                farm: 1,
+                title: "Another Example Image",
+                latitude: "38.897675",
+                longitude: "-77.036530"
+            ),
+            .init(
+                id: "Z",
+                owner: "Otto Mcdaniel",
+                secret: "Z",
+                server: "Z",
+                farm: 1,
+                title: "One More Example Image",
+                latitude: "38.897675",
+                longitude: "-77.036530"
+            ),
         ]
     }
 }
