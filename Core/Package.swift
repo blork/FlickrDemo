@@ -21,6 +21,11 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../Base"),
+        .package(
+            url: "https://github.com/pointfreeco/swift-snapshot-testing",
+            from: "1.12.0"
+        ),
+
     ],
     targets: [
         .target(name: "API"),
@@ -41,7 +46,10 @@ let package = Package(
         ),
         .testTarget(
             name: "DesignTests",
-            dependencies: ["Design"]
+            dependencies: [
+                "Design",
+                .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
+            ]
         ),
     ]
 )
