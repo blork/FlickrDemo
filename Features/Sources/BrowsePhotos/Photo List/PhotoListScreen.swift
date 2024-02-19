@@ -12,6 +12,7 @@ public struct PhotoListScreen: View {
     }
     
     public var body: some View {
+        @Bindable var viewModel = viewModel
         List {
             ForEach(viewModel.photos.value ?? placeholders) { photo in
                 NavigationLink(value: photo) {
@@ -27,6 +28,7 @@ public struct PhotoListScreen: View {
         .refreshable {
             await viewModel.load(refreshing: true)
         }
+        .searchable(text: $viewModel.search)
         .navigationTitle("Recent Photos")
     }
     

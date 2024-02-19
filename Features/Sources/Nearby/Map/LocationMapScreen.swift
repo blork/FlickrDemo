@@ -51,7 +51,9 @@ struct LocationMapScreen: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(viewModel.photos.isLoading)
+                .padding()
             }
+            
         }
     }
 }

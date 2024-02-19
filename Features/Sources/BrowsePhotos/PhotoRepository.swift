@@ -1,9 +1,10 @@
+import API
 import Foundation
 import Model
-import API
 
 public protocol PhotoRepository {
     func recent() async throws -> [Model.Photo]
+    func search(_ query: String) async throws -> [Model.Photo]
 }
 
 public class RemotePhotoRepository: PhotoRepository {
@@ -16,6 +17,15 @@ public class RemotePhotoRepository: PhotoRepository {
     
     public func recent() async throws -> [Model.Photo] {
         let results = try await client.recent()
+        return try await fetchDetails(results)
+    }
+    
+    public func search(_ query: String) async throws -> [Model.Photo] {
+        let results = try await client.search(.init(text: query))
+        return try await fetchDetails(results)
+    }
+    
+    func fetchDetails(_ results: [API.Photo.List.Item]) async throws -> [Model.Photo] {
         return try await withThrowingTaskGroup(of: API.Photo.Detail?.self, returning: [Model.Photo].self) { taskGroup in
             for result in results {
                 taskGroup.addTask { try? await self.client.info(for: result.id) }
@@ -46,6 +56,12 @@ public class StubPhotoRepository: PhotoRepository {
     }
     
     public func recent() async throws -> [Model.Photo] {
+        if let error { throw error }
+        if let photos { return photos }
+        throw StubPhotoRepositoryError.notSetUp
+    }
+    
+    public func search(_ query: String) async throws -> [Model.Photo] {
         if let error { throw error }
         if let photos { return photos }
         throw StubPhotoRepositoryError.notSetUp
