@@ -40,7 +40,7 @@ final class SearchTests: XCTestCase {
 
         let url = request.url!.absoluteString
         
-        XCTAssertEqual(url, "https://api.flickr.com/services/rest?api_key=TEST_KEY&format=json&nojsoncallback=1&method=flickr.photos.getRecent")
+        XCTAssertEqual(url, "https://api.flickr.com/services/rest?api_key=TEST_KEY&format=json&nojsoncallback=1&method=flickr.photos.getRecent&safe_search=1&per_page=50")
     }
     
     func test_photoInfo_whenCreated_hasCorrectQueryItems() async throws {
@@ -58,7 +58,7 @@ final class SearchTests: XCTestCase {
 
         let url = request.url!.absoluteString
         
-        XCTAssertEqual(url, "https://api.flickr.com/services/rest?api_key=TEST_KEY&format=json&nojsoncallback=1&method=flickr.photos.search&text=Hello")
+        XCTAssertEqual(url, "https://api.flickr.com/services/rest?api_key=TEST_KEY&format=json&nojsoncallback=1&method=flickr.photos.search&text=Hello&safe_search=1&per_page=25")
     }
     
     func test_searchRequest_withLocationSearch_hasCorrectQueryItems() async throws {
@@ -67,7 +67,7 @@ final class SearchTests: XCTestCase {
 
         let url = request.url!.absoluteString
         
-        XCTAssertEqual(url, "https://api.flickr.com/services/rest?api_key=TEST_KEY&format=json&nojsoncallback=1&method=flickr.photos.search&text&extras=geo&has_geo=1&accuracy=11&bbox=1.0,2.0,2.0,4.0")
+        XCTAssertEqual(url, "https://api.flickr.com/services/rest?api_key=TEST_KEY&format=json&nojsoncallback=1&method=flickr.photos.search&text&safe_search=1&per_page=25&extras=geo&has_geo=1&accuracy=11&bbox=1.0,2.0,2.0,4.0")
     }
     
     func test_searchIsPerformed_successful_photosAreReturned() async throws {

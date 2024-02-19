@@ -16,6 +16,8 @@ public enum Search {
             var items = [
                 URLQueryItem(name: "method", value: "flickr.photos.search"),
                 URLQueryItem(name: "text", value: text),
+                URLQueryItem(name: "safe_search", value: "1"),
+                URLQueryItem(name: "per_page", value: "25"),
             ]
             
             if let boundingBox {

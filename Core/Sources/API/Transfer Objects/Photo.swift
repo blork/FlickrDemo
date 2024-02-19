@@ -14,6 +14,8 @@ public enum Photo: QueryItemConvertible {
         case .recent:
             [
                 URLQueryItem(name: "method", value: "flickr.photos.getRecent"),
+                URLQueryItem(name: "safe_search", value: "1"),
+                URLQueryItem(name: "per_page", value: "50"),
             ]
         }
     }
