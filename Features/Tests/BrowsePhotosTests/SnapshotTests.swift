@@ -1,16 +1,18 @@
-import XCTest
+import Base
 @testable import BrowsePhotos
+import Model
 import SnapshotTesting
+import XCTest
 
-final class PhotoListTests: XCTestCase {
+final class DesignTests: XCTestCase {
     
-    func testSnapshotPhotoView() throws {
-        let view = PhotoView(photo: .preview).fixedSize(horizontal: true, vertical: true)
-        assertSnapshot(of: view, as: .image(precision: 0.99, layout: .sizeThatFits))
+    func testSnapshotPhotoListScreen() throws {
+        assertSnapshot(of: PhotoListScreen(viewModel: .Preview(.loading)), as: .image(precision: 0.99, layout: .device(config: .iPhone13)))
+        assertSnapshot(of: PhotoListScreen(viewModel: .Preview(.loaded(.preview))), as: .image(precision: 0.99, layout: .device(config: .iPhone13)))
+        assertSnapshot(of: PhotoListScreen(viewModel: .Preview(.error(PreviewError.whoops))), as: .image(precision: 0.99, layout: .device(config: .iPhone13)))
     }
     
-    func testSnapshotPhotoDetailScreen() throws {
-        let view = PhotoDetailScreen(photo: .preview)
-        assertSnapshot(of: view, as: .image(precision: 0.99, layout: .device(config: .iPhone13)))
+    func testSnapshotPhotoDetailsScreen() throws {
+        assertSnapshot(of: PhotoDetailScreen(photo: .preview), as: .image(precision: 0.99, layout: .device(config: .iPhone13)))
     }
 }

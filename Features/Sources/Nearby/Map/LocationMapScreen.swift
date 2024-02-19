@@ -1,5 +1,6 @@
 import Design
 import MapKit
+import Model
 import SwiftUI
 
 struct LocationMapScreen: View {
@@ -18,19 +19,7 @@ struct LocationMapScreen: View {
                     if let lat = photo.latitude, let lon = photo.longitude {
                         Annotation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon)) {
                             NavigationLink(value: photo) {
-                                AsyncImage(url: photo.imageURL) { image in
-                                    image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                } placeholder: {
-                                    Color.gray
-                                }
-                                .frame(width: 64, height: 64)
-                                .clipShape(.rect(cornerRadius: .cornerRadius(.regular)))
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: .cornerRadius(.regular))
-                                        .stroke(Color.white, lineWidth: 4)
-                                )
+                                PhotoView(photo: photo)
                             }
                         } label: {
                             Text(photo.title)
@@ -38,6 +27,7 @@ struct LocationMapScreen: View {
                     }
                 }
             }
+            .photoViewStyle(.compact)
             .mapControlVisibility(.visible)
             .mapControls {
                 MapUserLocationButton()
