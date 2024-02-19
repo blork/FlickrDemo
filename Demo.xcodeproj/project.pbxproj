@@ -23,18 +23,8 @@
 		CBEDBA902B751CA500E2220E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBA8F2B751CA500E2220E /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CBEDBA962B751CA600E2220E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBEDBA7C2B751CA400E2220E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CBEDBA832B751CA400E2220E;
-			remoteInfo = Demo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		CB19B0A22B751DC9002487A4 /* Demo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Demo.xctestplan; sourceTree = "<group>"; };
+		CB19B0A22B751DC9002487A4 /* All Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "All Tests.xctestplan"; sourceTree = "<group>"; };
 		CB19B0A32B751EE5002487A4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		CB19B0A42B75206E002487A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB19B0A52B7520AA002487A4 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -56,7 +46,6 @@
 		CBEDBA8B2B751CA500E2220E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBEDBA8D2B751CA500E2220E /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
 		CBEDBA8F2B751CA500E2220E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CBEDBA952B751CA600E2220E /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +71,6 @@
 			files = (
 				CBCA46E52B7BCE2600CA6793 /* BrowsePhotos in Frameworks */,
 				CBB5ABED2B7FB22E00546D3B /* Nearby in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBEDBA922B751CA600E2220E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,12 +116,11 @@
 		CBEDBA7B2B751CA400E2220E = {
 			isa = PBXGroup;
 			children = (
+				CB19B0A22B751DC9002487A4 /* All Tests.xctestplan */,
 				CBCA46E12B7A7E1300CA6793 /* Base */,
 				CBCB5C022B7A79B40021357A /* Core */,
 				CBCB5C052B7A7B070021357A /* Features */,
 				CBEDBA862B751CA400E2220E /* Demo */,
-				CBEDBA982B751CA600E2220E /* DemoTests */,
-				CB19B0A22B751DC9002487A4 /* Demo.xctestplan */,
 				CBB5ABD82B7FAAD900546D3B /* BrowsePhotosMiniApp */,
 				CBB5ABF32B7FB29C00546D3B /* NearbyMiniApp */,
 				CBEDBA852B751CA400E2220E /* Products */,
@@ -151,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				CBEDBA842B751CA400E2220E /* Demo.app */,
-				CBEDBA952B751CA600E2220E /* DemoTests.xctest */,
 				CBB5ABD72B7FAAD900546D3B /* BrowsePhotosMiniApp.app */,
 				CBB5ABF22B7FB29C00546D3B /* NearbyMiniApp.app */,
 			);
@@ -179,13 +159,6 @@
 				CBEDBA8F2B751CA500E2220E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CBEDBA982B751CA600E2220E /* DemoTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DemoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,24 +225,6 @@
 			productReference = CBEDBA842B751CA400E2220E /* Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CBEDBA942B751CA600E2220E /* DemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CBEDBAAC2B751CA600E2220E /* Build configuration list for PBXNativeTarget "DemoTests" */;
-			buildPhases = (
-				CBEDBA912B751CA600E2220E /* Sources */,
-				CBEDBA922B751CA600E2220E /* Frameworks */,
-				CBEDBA932B751CA600E2220E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CBEDBA972B751CA600E2220E /* PBXTargetDependency */,
-			);
-			name = DemoTests;
-			productName = DemoTests;
-			productReference = CBEDBA952B751CA600E2220E /* DemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -289,10 +244,6 @@
 					CBEDBA832B751CA400E2220E = {
 						CreatedOnToolsVersion = 15.1;
 					};
-					CBEDBA942B751CA600E2220E = {
-						CreatedOnToolsVersion = 15.1;
-						TestTargetID = CBEDBA832B751CA400E2220E;
-					};
 				};
 			};
 			buildConfigurationList = CBEDBA7F2B751CA400E2220E /* Build configuration list for PBXProject "Demo" */;
@@ -309,7 +260,6 @@
 			projectRoot = "";
 			targets = (
 				CBEDBA832B751CA400E2220E /* Demo */,
-				CBEDBA942B751CA600E2220E /* DemoTests */,
 				CBB5ABD62B7FAAD900546D3B /* BrowsePhotosMiniApp */,
 				CBB5ABF12B7FB29C00546D3B /* NearbyMiniApp */,
 			);
@@ -344,13 +294,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBEDBA932B751CA600E2220E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -379,22 +322,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBEDBA912B751CA600E2220E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CBEDBA972B751CA600E2220E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CBEDBA832B751CA400E2220E /* Demo */;
-			targetProxy = CBEDBA962B751CA600E2220E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CBB5ABE32B7FAADA00546D3B /* Debug */ = {
@@ -723,50 +651,6 @@
 			};
 			name = Release;
 		};
-		CBEDBAAD2B751CA600E2220E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blork.DemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Demo";
-			};
-			name = Debug;
-		};
-		CBEDBAAE2B751CA600E2220E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blork.DemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Demo";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -802,15 +686,6 @@
 			buildConfigurations = (
 				CBEDBAAA2B751CA600E2220E /* Debug */,
 				CBEDBAAB2B751CA600E2220E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CBEDBAAC2B751CA600E2220E /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CBEDBAAD2B751CA600E2220E /* Debug */,
-				CBEDBAAE2B751CA600E2220E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

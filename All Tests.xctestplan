@@ -1,0 +1,56 @@
+{
+  "configurations" : [
+    {
+      "id" : "77BD16F9-09F7-4C7E-BE34-7586531AFEB9",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Demo.xcodeproj",
+      "identifier" : "CBEDBA832B751CA400E2220E",
+      "name" : "Demo"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Base",
+        "identifier" : "BaseTests",
+        "name" : "BaseTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Core",
+        "identifier" : "APITests",
+        "name" : "APITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Core",
+        "identifier" : "DesignTests",
+        "name" : "DesignTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Features",
+        "identifier" : "BrowsePhotosTests",
+        "name" : "BrowsePhotosTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Features",
+        "identifier" : "NearbyTests",
+        "name" : "NearbyTests"
+      }
+    }
+  ],
+  "version" : 1
+}
