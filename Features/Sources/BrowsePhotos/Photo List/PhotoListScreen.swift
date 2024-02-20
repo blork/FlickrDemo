@@ -4,31 +4,47 @@ import Model
 import SwiftUI
 
 public struct PhotoListScreen: View {
-    
+
     public let viewModel: PhotoListViewModel
     
+    @State private var isSearching = false
+
     public init(viewModel: PhotoListViewModel) {
         self.viewModel = viewModel
     }
     
     public var body: some View {
         @Bindable var viewModel = viewModel
-        List {
-            ForEach(viewModel.photos.value ?? placeholders) { photo in
-                NavigationLink(value: photo) {
-                    PhotoView(photo: photo)
+        ZStack {
+            if viewModel.photos.value?.isEmpty == true && isSearching {
+                ContentUnavailableView.search
+            } else {
+                List {
+                    ForEach(viewModel.photos.value ?? placeholders) { photo in
+                        NavigationLink(value: photo) {
+                            PhotoView(photo: photo)
+                        }
+                    }
                 }
+                .listStyle(.plain)
+                .loading(resource: viewModel.photos)
             }
         }
-        .listStyle(.plain)
-        .loading(resource: viewModel.photos)
         .oneTimeTask {
             await viewModel.load()
         }
         .refreshable {
             await viewModel.load(refreshing: true)
         }
-        .searchable(text: $viewModel.search)
+        .onChange(of: isSearching) {
+            if !isSearching {
+                Task {
+                    await viewModel.load()
+                }
+            }
+        }
+        
+        .searchable(text: $viewModel.search, isPresented: $isSearching)
         .navigationTitle("Recent Photos")
     }
     

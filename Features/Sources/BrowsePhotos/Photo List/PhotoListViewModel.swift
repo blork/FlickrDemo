@@ -11,8 +11,10 @@ import Model
     
     var search = "" {
         didSet {
-            photos = .loading
-            debouncer.emit(value: search)
+            if !search.isEmpty {
+                photos = .loading
+                debouncer.emit(value: search)
+            }
         }
     }
 
@@ -28,7 +30,7 @@ import Model
     }
     
     func load(refreshing: Bool = false) async {
-        if !refreshing, !photos.isLoaded {
+        if !refreshing {
             photos = .loading
         }
         do {
