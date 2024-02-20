@@ -35,7 +35,7 @@ import Model
         }
         do {
             if search.isEmpty {
-                photos = try await .loaded(photoRepository.recent())
+                photos = try await .loaded(photoRepository.search("Nature"))
             } else {
                 photos = try await .loaded(photoRepository.search(search))
             }
