@@ -106,13 +106,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CBCB5BFD2B7A77140021357A /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
 		CBEDBA7B2B751CA400E2220E = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				CBEDBA872B751CA400E2220E /* DemoApp.swift */,
-				CBCB5BFD2B7A77140021357A /* Screens */,
 				CBEDBA8D2B751CA500E2220E /* Demo.entitlements */,
 				CB19B0A42B75206E002487A4 /* Info.plist */,
 				CB19B0A52B7520AA002487A4 /* Configuration.swift */,
