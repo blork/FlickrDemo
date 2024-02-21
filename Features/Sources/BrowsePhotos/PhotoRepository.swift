@@ -25,6 +25,12 @@ public class RemotePhotoRepository: PhotoRepository {
         return try await fetchDetails(results)
     }
     
+    
+    /// Requests the full details for a list of photo items.
+    ///
+    /// This method will perform an API request for each photo in the list of results.
+    /// - Parameter results: A list of Photo items to expand
+    /// - Returns: The expanded list of photo items mapped into Model.Photos.
     func fetchDetails(_ results: [API.Photo.List.Item]) async throws -> [Model.Photo] {
         return try await withThrowingTaskGroup(of: API.Photo.Detail?.self, returning: [Model.Photo].self) { taskGroup in
             for result in results {

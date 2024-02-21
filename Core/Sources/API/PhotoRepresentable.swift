@@ -1,5 +1,6 @@
 import Foundation
 
+/// Indicates an object has an image representation.
 public protocol PhotoRepresentable {
     var id: String { get }
     var server: String { get }

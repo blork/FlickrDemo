@@ -23,6 +23,13 @@ struct ResourceViewModifier<T>: ViewModifier {
 }
 
 public extension View {
+    /// Adds a condition that controls whether the view is shown with an overlay matching a resource's state.
+    ///
+    /// If .loaded, the view is shown unmodified.
+    /// if .loading, the view is redacted and shown with a progress view overlay.
+    /// If .error, the view is redacted and shown with an error overlay
+    /// - Parameter resource: A Resource value that determines how the view is shown, depending on the loading state of the resource.
+    /// - Returns: The modified view.
     func loading<T>(resource: Resource<T>) -> some View {
         modifier(ResourceViewModifier(resource: resource))
     }

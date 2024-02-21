@@ -11,6 +11,10 @@ extension DateFormatter {
 }
 
 extension JSONDecoder.DateDecodingStrategy {
+    
+    /// Decodes a given value as a Date, attempting multiple formats.
+    ///
+    /// Flickr dates can be in one of two formats, `yyyy-MM-dd HH:mm:ss`,  or UNIX timestamp.
     static var lenient: JSONDecoder.DateDecodingStrategy {
         .custom { decoder in
             let container = try decoder.singleValueContainer()

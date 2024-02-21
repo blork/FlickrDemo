@@ -13,6 +13,8 @@ import Model
         didSet {
             if !search.isEmpty {
                 photos = .loading
+                
+                // To prevent hammering the API on every keystroke, the query is debounced.
                 debouncer.emit(value: search)
             }
         }

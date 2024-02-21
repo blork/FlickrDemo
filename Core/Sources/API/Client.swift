@@ -2,8 +2,18 @@ import Foundation
 import OSLog
 
 public protocol Client {
+    
+    /// Return recently uploaded Photos.
+    /// - Returns: A list of Photos.
     func recent() async throws -> [Photo.List.Item]
+    
+    /// Perform a search for matching Photos.
+    /// - Parameter query: The search query to perform
+    /// - Returns: A list of Photos.
     func search(_ query: Search.Query) async throws -> [Photo.List.Item]
+    
+    /// Returns the full details for a specific Photo.
+    /// - Returns: The Details of a photo..
     func info(for id: Photo.Detail.ID) async throws -> Photo.Detail
 }
 

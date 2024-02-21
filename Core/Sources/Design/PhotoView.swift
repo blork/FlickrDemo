@@ -1,6 +1,10 @@
 import Model
 import SwiftUI
 
+/// A PhotoView shows information about a `Model.Photo`, including its title, description, and image, depending on the style.
+///
+/// You create a product view by providing a Photo value you previously loaded.
+/// You can customize the photo view’s appearance using the standard styles, including `regular`, `compact`, and `full`. Apply the style using the `photoViewStyle(_:)` view modifier.
 public struct PhotoView: View {
     
     let photo: Photo
