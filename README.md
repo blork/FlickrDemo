@@ -1,5 +1,7 @@
 # Demo Flickr App
 
+**Developed in Xcode 15.1**
+
 This is a sample application which uses the Flickr API. The project is intended to show a modern SwiftUI app, with an MVVM architecture with a high degree of modularisation and testability. Many of the choices are overkill for an application of this size, but serve to illustrate a solid foundation upon which a larger app could be sustainably grown.
 
 This project reflects around 12 hours of effort.
