@@ -46,6 +46,7 @@
 		CBEDBA8B2B751CA500E2220E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBEDBA8D2B751CA500E2220E /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
 		CBEDBA8F2B751CA500E2220E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CBFE50DE2B85FC8D00914575 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 		CBEDBA7B2B751CA400E2220E = {
 			isa = PBXGroup;
 			children = (
+				CBFE50DE2B85FC8D00914575 /* README.md */,
 				CB19B0A22B751DC9002487A4 /* All Tests.xctestplan */,
 				CBCA46E12B7A7E1300CA6793 /* Base */,
 				CBCB5C022B7A79B40021357A /* Core */,
